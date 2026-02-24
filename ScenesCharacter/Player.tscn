@@ -435,3 +435,5 @@ autoplay = "Front_Idle"
 visible = false
 position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_6sgvh")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=760973714]
