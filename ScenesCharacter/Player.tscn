@@ -421,7 +421,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6sgvh"]
-size = Vector2(11, 16)
+size = Vector2(11, 9)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2116602626]
 script = ExtResource("1_tido0")
@@ -432,8 +432,7 @@ animation = &"Front_Idle"
 autoplay = "Front_Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1646800905]
-visible = false
-position = Vector2(-0.5, -1)
+position = Vector2(-0.5, 2.5)
 shape = SubResource("RectangleShape2D_6sgvh")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=760973714]
