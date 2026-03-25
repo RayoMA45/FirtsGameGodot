@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dng6j4v8ufdc7" path="res://Assets/Cute_Fantasy_Free/Player/Player.png" id="1_6sgvh"]
 [ext_resource type="Script" uid="uid://d0fm0hongvmjx" path="res://Scripts/player.gd" id="1_tido0"]
-[ext_resource type="Texture2D" uid="uid://vfnv3w8vvypb" path="res://Assets/Cute_Fantasy_Free/Player/Player_Fish_all.png" id="3_vuwrl"]
+[ext_resource type="Texture2D" uid="uid://b5tl7bd7n3qyj" path="res://Assets/Cute_Fantasy_Free/Player/Player_fish1.3.png" id="4_bur48"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6sgvh"]
 atlas = ExtResource("1_6sgvh")
@@ -84,41 +84,49 @@ region = Rect2(64, 288, 32, 32)
 atlas = ExtResource("1_6sgvh")
 region = Rect2(96, 288, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8m6o"]
+atlas = ExtResource("4_bur48")
+region = Rect2(141, 0, 47, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_xhadx"]
-atlas = ExtResource("3_vuwrl")
-region = Rect2(108, 0, 36, 37)
+atlas = ExtResource("4_bur48")
+region = Rect2(94, 0, 47, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wlt0t"]
-atlas = ExtResource("3_vuwrl")
-region = Rect2(72, 0, 36, 37)
+atlas = ExtResource("4_bur48")
+region = Rect2(47, 0, 47, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sp0d4"]
-atlas = ExtResource("3_vuwrl")
-region = Rect2(36, 0, 36, 37)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f86pf"]
-atlas = ExtResource("3_vuwrl")
-region = Rect2(0, 0, 36, 37)
+atlas = ExtResource("4_bur48")
+region = Rect2(0, 0, 47, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cxv23"]
-atlas = ExtResource("3_vuwrl")
-region = Rect2(0, 0, 36, 37)
+atlas = ExtResource("4_bur48")
+region = Rect2(0, 0, 47, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ma1ev"]
-atlas = ExtResource("3_vuwrl")
-region = Rect2(36, 0, 36, 37)
+atlas = ExtResource("4_bur48")
+region = Rect2(47, 0, 47, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0vclo"]
-atlas = ExtResource("3_vuwrl")
-region = Rect2(72, 0, 36, 37)
+atlas = ExtResource("4_bur48")
+region = Rect2(94, 0, 47, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kfnjl"]
-atlas = ExtResource("3_vuwrl")
-region = Rect2(108, 0, 36, 37)
+atlas = ExtResource("4_bur48")
+region = Rect2(141, 0, 47, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c8m6o"]
-atlas = ExtResource("3_vuwrl")
-region = Rect2(108, 0, 36, 37)
+[sub_resource type="AtlasTexture" id="AtlasTexture_f86pf"]
+atlas = ExtResource("4_bur48")
+region = Rect2(0, 48, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6kjc"]
+atlas = ExtResource("4_bur48")
+region = Rect2(47, 48, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wmnh"]
+atlas = ExtResource("4_bur48")
+region = Rect2(94, 48, 47, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rt16h"]
 atlas = ExtResource("1_6sgvh")
@@ -332,6 +340,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_c8m6o")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_xhadx")
 }, {
 "duration": 1.0,
@@ -339,9 +350,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sp0d4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f86pf")
 }],
 "loop": false,
 "name": &"Fish_End",
@@ -366,11 +374,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c8m6o")
+"texture": SubResource("AtlasTexture_f86pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6kjc")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_4wmnh")
 }],
 "loop": true,
 "name": &"Fish_Wait",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -509,6 +523,8 @@ script = ExtResource("1_tido0")
 sprite_frames = SubResource("SpriteFrames_2tc1g")
 animation = &"Fish_Start"
 autoplay = "Front_Idle"
+frame = 3
+frame_progress = 1.0
 
 [node name="Marker2D" type="Marker2D" parent="AnimatedSprite2D" unique_id=1677345941]
 position = Vector2(15, 2)
