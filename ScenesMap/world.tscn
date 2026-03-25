@@ -46,6 +46,7 @@ texture = ExtResource("3_eiy7d")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hhfi2"]
 texture = ExtResource("4_kaqen")
 0:0/0 = 0
+0:0/0/custom_data_0 = "water"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cf084"]
 texture = ExtResource("5_xk1f5")
@@ -58,6 +59,7 @@ texture = ExtResource("5_xk1f5")
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(4.6763268, -8, 4.4964676, 8, 8, 8, 8, -8)
 1:1/0 = 0
+1:1/0/custom_data_0 = "water"
 2:1/0 = 0
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.2374573, -8, -2.6978817, 8, -8, 8, -8, -8)
 0:2/0 = 0
@@ -75,8 +77,11 @@ texture = ExtResource("5_xk1f5")
 1:4/0 = 0
 1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3.956892, -2.6978817, 3.7770348, 0.17985916, 3.057598, 3.057598, 1.0791531, 3.057598, -3.2374563, 3.7770329, -8, 8, -8, 8, 8, -8, 8)
 0:5/0 = 0
+0:5/0/custom_data_0 = "water"
 1:5/0 = 0
+1:5/0/custom_data_0 = "water"
 2:5/0 = 0
+2:5/0/custom_data_0 = "water"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yhxos"]
 texture = ExtResource("6_oigrv")
@@ -123,6 +128,8 @@ texture = ExtResource("7_s6xg0")
 
 [sub_resource type="TileSet" id="TileSet_jpbj0"]
 physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "type"
+custom_data_layer_0/type = 4
 sources/0 = SubResource("TileSetAtlasSource_56ay2")
 sources/1 = SubResource("TileSetAtlasSource_4yu2b")
 sources/2 = SubResource("TileSetAtlasSource_kjdge")

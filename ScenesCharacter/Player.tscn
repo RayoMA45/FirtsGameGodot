@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dng6j4v8ufdc7" path="res://Assets/Cute_Fantasy_Free/Player/Player.png" id="1_6sgvh"]
 [ext_resource type="Script" uid="uid://d0fm0hongvmjx" path="res://Scripts/player.gd" id="1_tido0"]
+[ext_resource type="Texture2D" uid="uid://vfnv3w8vvypb" path="res://Assets/Cute_Fantasy_Free/Player/Player_Fish_all.png" id="3_vuwrl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6sgvh"]
 atlas = ExtResource("1_6sgvh")
@@ -82,6 +83,42 @@ region = Rect2(64, 288, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_o8lj6"]
 atlas = ExtResource("1_6sgvh")
 region = Rect2(96, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhadx"]
+atlas = ExtResource("3_vuwrl")
+region = Rect2(108, 0, 36, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlt0t"]
+atlas = ExtResource("3_vuwrl")
+region = Rect2(72, 0, 36, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sp0d4"]
+atlas = ExtResource("3_vuwrl")
+region = Rect2(36, 0, 36, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f86pf"]
+atlas = ExtResource("3_vuwrl")
+region = Rect2(0, 0, 36, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxv23"]
+atlas = ExtResource("3_vuwrl")
+region = Rect2(0, 0, 36, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma1ev"]
+atlas = ExtResource("3_vuwrl")
+region = Rect2(36, 0, 36, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vclo"]
+atlas = ExtResource("3_vuwrl")
+region = Rect2(72, 0, 36, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfnjl"]
+atlas = ExtResource("3_vuwrl")
+region = Rect2(108, 0, 36, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8m6o"]
+atlas = ExtResource("3_vuwrl")
+region = Rect2(108, 0, 36, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rt16h"]
 atlas = ExtResource("1_6sgvh")
@@ -295,6 +332,48 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_xhadx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlt0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sp0d4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f86pf")
+}],
+"loop": false,
+"name": &"Fish_End",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxv23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ma1ev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vclo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfnjl")
+}],
+"loop": false,
+"name": &"Fish_Start",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8m6o")
+}],
+"loop": true,
+"name": &"Fish_Wait",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_rt16h")
 }, {
 "duration": 1.0,
@@ -428,11 +507,16 @@ script = ExtResource("1_tido0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1677817887]
 sprite_frames = SubResource("SpriteFrames_2tc1g")
-animation = &"Front_Idle"
+animation = &"Fish_Start"
 autoplay = "Front_Idle"
+
+[node name="Marker2D" type="Marker2D" parent="AnimatedSprite2D" unique_id=1677345941]
+position = Vector2(15, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1646800905]
 position = Vector2(-0.5, 2.5)
 shape = SubResource("RectangleShape2D_6sgvh")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=760973714]
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
