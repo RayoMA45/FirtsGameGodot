@@ -20,7 +20,20 @@ func _fishing_state():
 
 func _stop_fishing():
 	waitForFish = false
-	anim.play("Fish_End")
+	match current_dir:
+		"right":
+			anim.flip_h = false
+			anim.play("Fish_End_Side")
+		"left":
+			anim.flip_h = true
+			anim.play("Fish_End_Side")
+		"down":
+			anim.play("Fish_End_Front")
+		"up":
+			anim.play("Fish_End_Back")
+	#anim.play("Fish_End_Side")
+	await anim.animation_finished
+	startFishing = false
 	move_and_slide()
 
 func player_movement(delta):
@@ -57,7 +70,18 @@ func _start_fishing():
 	if not _get_tile_data() == "water": return
 	startFishing = true
 	waitForFish = false
-	anim.play("Fish_Start")
+	#anim.play("Fish_Start_Side")
+	match current_dir:
+		"right":
+			anim.flip_h = false
+			anim.play("Fish_Start_Side")
+		"left":
+			anim.flip_h = true
+			anim.play("Fish_Start_Side")
+		"down":
+			anim.play("Fish_Start_Front")
+		"up":
+			anim.play("Fish_Start_Back")
 
 func _get_tile_data():
 	var tileMap = get_parent().find_child("TileMapLayer")
@@ -93,8 +117,18 @@ func play_anim(movement):
 			anim.play("Back_Idle")
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if anim.animation == "Fish_Start":
+	if anim.animation == "Fish_Start_Side" or anim.animation == "Fish_Start_Front" or anim.animation == "Fish_Start_Back":
 		waitForFish = true
-		anim.play("Fish_Wait")
+		match current_dir:
+			"right":
+				anim.flip_h = false
+				anim.play("Fish_Wait_Side")
+			"left":
+				anim.flip_h = true
+				anim.play("Fish_Wait_Side")
+			"down":
+				anim.play("Fish_Wait_Front")
+			"up":
+				anim.play("Fish_Wait_Back")
 	elif anim.animation == "Fish_End":
 		startFishing = false

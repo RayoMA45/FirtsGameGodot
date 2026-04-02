@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dng6j4v8ufdc7" path="res://Assets/Cute_Fantasy_Free/Player/Player.png" id="1_6sgvh"]
 [ext_resource type="Script" uid="uid://d0fm0hongvmjx" path="res://Scripts/player.gd" id="1_tido0"]
+[ext_resource type="Texture2D" uid="uid://b31c7i05724il" path="res://Assets/Cute_Fantasy_Free/Player/Player_fish_all_position1.png" id="4_1s7eg"]
 [ext_resource type="Texture2D" uid="uid://b5tl7bd7n3qyj" path="res://Assets/Cute_Fantasy_Free/Player/Player_fish1.3.png" id="4_bur48"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6sgvh"]
@@ -84,6 +85,26 @@ region = Rect2(64, 288, 32, 32)
 atlas = ExtResource("1_6sgvh")
 region = Rect2(96, 288, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rjnt"]
+atlas = ExtResource("4_1s7eg")
+region = Rect2(47, 96, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bic12"]
+atlas = ExtResource("4_1s7eg")
+region = Rect2(0, 96, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1wtp"]
+atlas = ExtResource("4_1s7eg")
+region = Rect2(94, 0, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbyn3"]
+atlas = ExtResource("4_1s7eg")
+region = Rect2(47, 0, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6lny"]
+atlas = ExtResource("4_1s7eg")
+region = Rect2(0, 0, 47, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_c8m6o"]
 atlas = ExtResource("4_bur48")
 region = Rect2(141, 0, 47, 48)
@@ -100,6 +121,26 @@ region = Rect2(47, 0, 47, 48)
 atlas = ExtResource("4_bur48")
 region = Rect2(0, 0, 47, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3i87"]
+atlas = ExtResource("4_1s7eg")
+region = Rect2(0, 96, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wy47a"]
+atlas = ExtResource("4_1s7eg")
+region = Rect2(47, 96, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v642r"]
+atlas = ExtResource("4_1s7eg")
+region = Rect2(0, 0, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dmnq"]
+atlas = ExtResource("4_1s7eg")
+region = Rect2(47, 0, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5mcf"]
+atlas = ExtResource("4_1s7eg")
+region = Rect2(94, 0, 47, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cxv23"]
 atlas = ExtResource("4_bur48")
 region = Rect2(0, 0, 47, 48)
@@ -115,6 +156,34 @@ region = Rect2(94, 0, 47, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_kfnjl"]
 atlas = ExtResource("4_bur48")
 region = Rect2(141, 0, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyfwo"]
+atlas = ExtResource("4_1s7eg")
+region = Rect2(47, 144, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23f53"]
+atlas = ExtResource("4_1s7eg")
+region = Rect2(94, 144, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o0ju"]
+atlas = ExtResource("4_1s7eg")
+region = Rect2(0, 144, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lvfe"]
+atlas = ExtResource("4_1s7eg")
+region = Rect2(0, 48, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwpc4"]
+atlas = ExtResource("4_1s7eg")
+region = Rect2(47, 48, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkdlb"]
+atlas = ExtResource("4_1s7eg")
+region = Rect2(94, 48, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwmqb"]
+atlas = ExtResource("4_1s7eg")
+region = Rect2(141, 48, 47, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f86pf"]
 atlas = ExtResource("4_bur48")
@@ -340,6 +409,31 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_5rjnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bic12")
+}],
+"loop": false,
+"name": &"Fish_End_Back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1wtp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbyn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6lny")
+}],
+"loop": false,
+"name": &"Fish_End_Front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_c8m6o")
 }, {
 "duration": 1.0,
@@ -352,7 +446,32 @@ animations = [{
 "texture": SubResource("AtlasTexture_sp0d4")
 }],
 "loop": false,
-"name": &"Fish_End",
+"name": &"Fish_End_Side",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3i87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wy47a")
+}],
+"loop": false,
+"name": &"Fish_Start_Back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v642r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dmnq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5mcf")
+}],
+"loop": false,
+"name": &"Fish_Start_Front",
 "speed": 5.0
 }, {
 "frames": [{
@@ -369,7 +488,38 @@ animations = [{
 "texture": SubResource("AtlasTexture_kfnjl")
 }],
 "loop": false,
-"name": &"Fish_Start",
+"name": &"Fish_Start_Side",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyfwo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23f53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5o0ju")
+}],
+"loop": true,
+"name": &"Fish_Wait_Back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lvfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwpc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkdlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwmqb")
+}],
+"loop": true,
+"name": &"Fish_Wait_Front",
 "speed": 5.0
 }, {
 "frames": [{
@@ -383,7 +533,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_4wmnh")
 }],
 "loop": true,
-"name": &"Fish_Wait",
+"name": &"Fish_Wait_Side",
 "speed": 2.0
 }, {
 "frames": [{
@@ -521,9 +671,9 @@ script = ExtResource("1_tido0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1677817887]
 sprite_frames = SubResource("SpriteFrames_2tc1g")
-animation = &"Fish_Start"
+animation = &"Fish_End_Back"
 autoplay = "Front_Idle"
-frame = 3
+frame = 1
 frame_progress = 1.0
 
 [node name="Marker2D" type="Marker2D" parent="AnimatedSprite2D" unique_id=1677345941]
