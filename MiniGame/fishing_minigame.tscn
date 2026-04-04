@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://male2bhkkk1s"]
+
+[ext_resource type="Script" uid="uid://cnvc8ordhqjsa" path="res://Scripts/fishingMiniGame.gd" id="1_njtdr"]
+
+[node name="FishingMinigame" type="CanvasLayer" unique_id=909478685]
+script = ExtResource("1_njtdr")
+
+[node name="Control" type="Control" parent="." unique_id=1365957395]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control" unique_id=1928180941]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -144.0
+offset_top = -322.0
+offset_right = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bar" type="ColorRect" parent="Control/Panel" unique_id=849464776]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 6.0
+offset_right = 237.0
+offset_bottom = 647.0
+color = Color(0.41313332, 0.9999998, 0.3251102, 1)
+
+[node name="Fish" type="ColorRect" parent="Control/Panel" unique_id=1645517328]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 280.0
+offset_right = 211.0
+offset_bottom = 383.0
+color = Color(0.6114672, 0.16954342, 0.08022135, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/Panel" unique_id=1765978005]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 2.0
+offset_right = 265.0
+offset_bottom = 646.0
