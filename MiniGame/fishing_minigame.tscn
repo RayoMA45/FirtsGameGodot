@@ -21,31 +21,31 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -144.0
-offset_top = -322.0
-offset_right = 163.0
+offset_left = 80.0
+offset_top = -66.0
+offset_right = 119.0
+offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Bar" type="ColorRect" parent="Control/Panel" unique_id=849464776]
 layout_mode = 0
-offset_left = 75.0
-offset_top = 6.0
-offset_right = 237.0
-offset_bottom = 647.0
-color = Color(0.41313332, 0.9999998, 0.3251102, 1)
-
-[node name="Fish" type="ColorRect" parent="Control/Panel" unique_id=1645517328]
-layout_mode = 0
-offset_left = 96.0
-offset_top = 280.0
-offset_right = 211.0
-offset_bottom = 383.0
-color = Color(0.6114672, 0.16954342, 0.08022135, 1)
+offset_left = 9.0
+offset_top = 36.0
+offset_right = 19.0
+offset_bottom = 77.0
+color = Color(0.24919997, 0.7298, 0.89, 0.4509804)
 
 [node name="ProgressBar" type="ProgressBar" parent="Control/Panel" unique_id=1765978005]
 layout_mode = 0
-offset_left = 238.0
-offset_top = 2.0
-offset_right = 265.0
-offset_bottom = 646.0
+offset_left = 26.0
+offset_top = 3.0
+offset_right = 35.0
+offset_bottom = 121.0
+theme_override_colors/font_color = Color(0.37375072, 0.7556033, 0.81611454, 1)
+theme_override_font_sizes/font_size = 4
+fill_mode = 2
+
+[node name="Fish" type="Sprite2D" parent="Control/Panel" unique_id=836294571]
+position = Vector2(13.999997, 52.999985)
+scale = Vector2(0.32812485, 0.35937583)
