@@ -132,7 +132,7 @@ func _start_fishing():
 			anim.play("Fish_Start_Back")
 
 func _get_tile_data():
-	var tileMap = get_parent().find_child("TileMapLayer")
+	var tileMap = get_parent().find_child("Mar")
 	var searchPosition = tileMap.local_to_map(tile_marker.global_position)
 	var data = tileMap.get_cell_tile_data(searchPosition)
 	if data: return data.get_custom_data("type")

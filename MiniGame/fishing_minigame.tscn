@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://male2bhkkk1s"]
 
 [ext_resource type="Script" uid="uid://cnvc8ordhqjsa" path="res://Scripts/fishingMiniGame.gd" id="1_njtdr"]
+[ext_resource type="Texture2D" uid="uid://jdeyq1atgq3m" path="res://Assets/UI/mini_game_fish.png" id="2_eytke"]
 
 [node name="FishingMinigame" type="CanvasLayer" unique_id=909478685]
 script = ExtResource("1_njtdr")
@@ -21,31 +22,39 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 80.0
-offset_top = -66.0
-offset_right = 119.0
-offset_bottom = 58.0
+offset_left = 91.0
+offset_top = -58.0
+offset_right = 113.0
+offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Fish" type="Sprite2D" parent="Control/Panel" unique_id=836294571]
+z_index = 3
+position = Vector2(11.9999695, 58.000004)
+scale = Vector2(0.32812482, 0.35937586)
+offset = Vector2(6.095337, -13.913025)
+
+[node name="Ui" type="Sprite2D" parent="Control/Panel" unique_id=1936923407]
+position = Vector2(-28.999973, 49.000008)
+scale = Vector2(2.2460945, 3.2708328)
+texture = ExtResource("2_eytke")
+offset = Vector2(18.858917, 2.2550354)
 
 [node name="Bar" type="ColorRect" parent="Control/Panel" unique_id=849464776]
 layout_mode = 0
 offset_left = 9.0
-offset_top = 36.0
-offset_right = 19.0
-offset_bottom = 77.0
-color = Color(0.24919997, 0.7298, 0.89, 0.4509804)
+offset_top = 40.0
+offset_right = 18.0
+offset_bottom = 81.0
+color = Color(0, 0, 0, 0.4509804)
 
 [node name="ProgressBar" type="ProgressBar" parent="Control/Panel" unique_id=1765978005]
 layout_mode = 0
-offset_left = 26.0
-offset_top = 3.0
-offset_right = 35.0
-offset_bottom = 121.0
-theme_override_colors/font_color = Color(0.37375072, 0.7556033, 0.81611454, 1)
+offset_left = 27.0
+offset_top = -1.0
+offset_right = 32.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 4
 fill_mode = 2
-
-[node name="Fish" type="Sprite2D" parent="Control/Panel" unique_id=836294571]
-position = Vector2(13.999997, 52.999985)
-scale = Vector2(0.32812485, 0.35937583)
