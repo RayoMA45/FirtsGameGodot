@@ -664,25 +664,28 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6sgvh"]
-size = Vector2(11, 9)
+size = Vector2(8, 8)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2116602626]
+position = Vector2(0, 7)
 script = ExtResource("1_tido0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1677817887]
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_2tc1g")
-animation = &"Fish_End_Back"
-autoplay = "Front_Idle"
-frame = 1
-frame_progress = 1.0
+animation = &"Side_Idle"
+autoplay = "Side_Idle"
+frame = 5
+frame_progress = 0.56796753
 
 [node name="Marker2D" type="Marker2D" parent="AnimatedSprite2D" unique_id=1677345941]
-position = Vector2(15, 2)
+position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1646800905]
-position = Vector2(-0.5, 2.5)
+position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_6sgvh")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=760973714]
+position = Vector2(0, -15)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
