@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://d0fm0hongvmjx" path="res://Scripts/player.gd" id="1_tido0"]
 [ext_resource type="Texture2D" uid="uid://b31c7i05724il" path="res://Assets/Cute_Fantasy_Free/Player/Player_fish_all_position1.png" id="4_1s7eg"]
 [ext_resource type="Texture2D" uid="uid://b5tl7bd7n3qyj" path="res://Assets/Cute_Fantasy_Free/Player/Player_fish1.3.png" id="4_bur48"]
+[ext_resource type="AudioStream" uid="uid://c2srt5hm7l0t1" path="res://Assets/Sounds/Walk/walk_grass_1sec.mp3" id="5_td14b"]
+[ext_resource type="AudioStream" uid="uid://b61815snhvie2" path="res://Assets/Sounds/Walk/walk_sand_1sec.mp3" id="6_1blyk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6sgvh"]
 atlas = ExtResource("1_6sgvh")
@@ -687,5 +689,18 @@ shape = SubResource("RectangleShape2D_6sgvh")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=760973714]
 position = Vector2(0, -15)
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1975310540]
+position = Vector2(0, -13)
+target_position = Vector2(0, 5)
+collide_with_areas = true
+
+[node name="Walk_Grass" type="AudioStreamPlayer2D" parent="." unique_id=1449373866]
+stream = ExtResource("5_td14b")
+volume_db = -4.88
+
+[node name="Walk_Sand" type="AudioStreamPlayer2D" parent="." unique_id=1470753061]
+stream = ExtResource("6_1blyk")
+volume_db = -16.04
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

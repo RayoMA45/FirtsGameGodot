@@ -2,6 +2,10 @@ extends CharacterBody2D
 
 @onready var tile_marker = $AnimatedSprite2D/Marker2D
 @onready var anim = $AnimatedSprite2D
+# Referencias a los nodos
+@onready var raycast_suelo = $RayCast2D
+@onready var pasos_cesped = $Walk_Grass
+@onready var pasos_arena = $Walk_Sand
 
 var startFishing = false
 var waitForFish = false
@@ -15,10 +19,60 @@ var fish_on_hook := false
 
 var current_fish = null
 
+func _ready() -> void:
+	# Esto conecta automáticamente el cambio de frame con tu función de abajo
+	if anim:
+		anim.frame_changed.connect(_on_animated_sprite_2d_frame_changed)
+		
+func reproducir_sonido_paso():
+	if velocity == Vector2.ZERO or velocity.length() < 1.0:
+		return
+	var capas_mapa = ["Mapa Tierra", "Arena"]
+	for nombre_capa in capas_mapa:
+		var mapa = get_parent().find_child(nombre_capa)
+		if mapa and (mapa is TileMapLayer or mapa is TileMap):
+			var mapa_coords = mapa.local_to_map(tile_marker.global_position)
+			var tile_data = mapa.get_cell_tile_data(mapa_coords)
+			if tile_data:
+				var tipo_terreno = tile_data.get_custom_data("Terreno")
+				match tipo_terreno:
+					"tierra":
+						pasos_cesped.play()
+						return
+					"arena":
+						pasos_arena.play()
+						return
+	if velocity == Vector2.ZERO or velocity.length() < 1.0:
+		return
+	var mapa = get_parent().find_child("Mapa Tierra")
+	if mapa and (mapa is TileMapLayer or mapa is TileMap):
+		var mapa_coords = mapa.local_to_map(tile_marker.global_position)
+		var tile_data = mapa.get_cell_tile_data(mapa_coords)
+		if tile_data:
+			var tipo_terreno = tile_data.get_custom_data("Terreno")
+			match tipo_terreno:
+				"tierra":
+					pasos_cesped.play()
+				"arena":
+					pasos_arena.play()
+				_:
+					pass
+
+func _on_animated_sprite_2d_frame_changed() -> void:
+	# 1. Si no se están presionando las teclas de movimiento, CERO SONIDOS.
+	var moviendose = Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up")
+	if not moviendose:
+		return
+	if "Idle" in anim.animation:
+		return
+	if anim.animation == "Front_Walk" or anim.animation == "Back_Walk" or anim.animation == "Side_Walk":
+		if anim.frame == 1 or anim.frame == 3:
+			reproducir_sonido_paso()
+
 func _physics_process(delta):
 	if startFishing: _fishing_state()
 	else: player_movement(delta)
-	
+
 func _fishing_state(): 
 	velocity = Vector2.ZERO
 	if Input.is_action_just_pressed("ui_cancel"):
