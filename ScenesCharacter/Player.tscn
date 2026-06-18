@@ -665,8 +665,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sgvh"]
-size = Vector2(8, 8)
+[sub_resource type="CircleShape2D" id="CircleShape2D_td14b"]
+radius = 4.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2116602626]
 position = Vector2(0, 7)
@@ -685,7 +685,7 @@ position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1646800905]
 position = Vector2(0, -13)
-shape = SubResource("RectangleShape2D_6sgvh")
+shape = SubResource("CircleShape2D_td14b")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=760973714]
 position = Vector2(0, -15)

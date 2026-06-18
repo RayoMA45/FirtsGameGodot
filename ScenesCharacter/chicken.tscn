@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://b5ivgxoe0whvq"]
+
+[ext_resource type="Script" uid="uid://743175utv70n" path="res://Scripts/chicken.gd" id="1_5kdjm"]
+[ext_resource type="Texture2D" uid="uid://bujw04d3wdqba" path="res://Assets/Cute_Fantasy_Free/Animals/Chicken/Chicken.png" id="1_b5nlr"]
+[ext_resource type="AudioStream" uid="uid://bmvfb7pkfxe64" path="res://Assets/Sounds/Chicken/chicken.mp3" id="3_lr2p7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kdjm"]
+atlas = ExtResource("1_b5nlr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lr2p7"]
+atlas = ExtResource("1_b5nlr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08a55"]
+atlas = ExtResource("1_b5nlr")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reoyc"]
+atlas = ExtResource("1_b5nlr")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s13db"]
+atlas = ExtResource("1_b5nlr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dywgw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kdjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lr2p7")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08a55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_reoyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s13db")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b5nlr"]
+radius = 4.0
+
+[node name="Chicken" type="CharacterBody2D" unique_id=150911079]
+script = ExtResource("1_5kdjm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=368608499]
+sprite_frames = SubResource("SpriteFrames_dywgw")
+animation = &"Walk"
+frame = 2
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1121711686]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_b5nlr")
+
+[node name="chicken_sound" type="AudioStreamPlayer2D" parent="." unique_id=880838707]
+stream = ExtResource("3_lr2p7")
+volume_db = 5.136

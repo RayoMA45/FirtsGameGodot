@@ -59,7 +59,6 @@ func reproducir_sonido_paso():
 					pass
 
 func _on_animated_sprite_2d_frame_changed() -> void:
-	# 1. Si no se están presionando las teclas de movimiento, CERO SONIDOS.
 	var moviendose = Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up")
 	if not moviendose:
 		return
