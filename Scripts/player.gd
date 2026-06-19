@@ -24,39 +24,40 @@ func _ready() -> void:
 	if anim:
 		anim.frame_changed.connect(_on_animated_sprite_2d_frame_changed)
 		
-func reproducir_sonido_paso():
+func reproducir_sonido_paso() -> void:
+	# 1. Si la velocidad es cero, corte de emergencia
 	if velocity == Vector2.ZERO or velocity.length() < 1.0:
 		return
+		
+	# 2. Lista con los nombres exactos de tus capas de mapa
 	var capas_mapa = ["Mapa Tierra", "Arena"]
+	
+	# 3. Revisamos cada capa
 	for nombre_capa in capas_mapa:
-		var mapa = get_parent().find_child(nombre_capa)
-		if mapa and (mapa is TileMapLayer or mapa is TileMap):
-			var mapa_coords = mapa.local_to_map(tile_marker.global_position)
-			var tile_data = mapa.get_cell_tile_data(mapa_coords)
+		var mapa_actual = get_parent().find_child(nombre_capa)
+		
+		if mapa_actual and (mapa_actual is TileMapLayer or mapa_actual is TileMap):
+			# Calculamos las coordenadas según la capa
+			var mapa_coords = mapa_actual.local_to_map(tile_marker.global_position)
+			var tile_data = mapa_actual.get_cell_tile_data(mapa_coords)
+			
+			# Si encontramos datos, leemos el terreno
 			if tile_data:
 				var tipo_terreno = tile_data.get_custom_data("Terreno")
+				
+				if tipo_terreno != "":
+					print("Pisando en ", nombre_capa, ": ", tipo_terreno)
+				
+				# Filtramos el sonido
 				match tipo_terreno:
 					"tierra":
-						pasos_cesped.play()
+						if not pasos_cesped.playing:
+							pasos_cesped.play()
 						return
 					"arena":
-						pasos_arena.play()
+						if not pasos_arena.playing:
+							pasos_arena.play()
 						return
-	if velocity == Vector2.ZERO or velocity.length() < 1.0:
-		return
-	var mapa = get_parent().find_child("Mapa Tierra")
-	if mapa and (mapa is TileMapLayer or mapa is TileMap):
-		var mapa_coords = mapa.local_to_map(tile_marker.global_position)
-		var tile_data = mapa.get_cell_tile_data(mapa_coords)
-		if tile_data:
-			var tipo_terreno = tile_data.get_custom_data("Terreno")
-			match tipo_terreno:
-				"tierra":
-					pasos_cesped.play()
-				"arena":
-					pasos_arena.play()
-				_:
-					pass
 
 func _on_animated_sprite_2d_frame_changed() -> void:
 	var moviendose = Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_down") or Input.is_action_pressed("ui_up")
