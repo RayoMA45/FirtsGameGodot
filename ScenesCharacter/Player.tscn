@@ -666,7 +666,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_td14b"]
-radius = 4.0
+radius = 5.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2116602626]
 position = Vector2(0, 7)
@@ -696,10 +696,12 @@ target_position = Vector2(0, 5)
 collide_with_areas = true
 
 [node name="Walk_Grass" type="AudioStreamPlayer2D" parent="." unique_id=1449373866]
+position = Vector2(0, -13)
 stream = ExtResource("5_td14b")
 volume_db = -4.88
 
 [node name="Walk_Sand" type="AudioStreamPlayer2D" parent="." unique_id=1470753061]
+position = Vector2(0, -13)
 stream = ExtResource("6_1blyk")
 volume_db = -16.04
 

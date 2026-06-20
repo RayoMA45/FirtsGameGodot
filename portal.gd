@@ -26,10 +26,14 @@ func _process(_delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		jugador_dentro = true
-		texto_interaccion.visible = true # Mostramos el mensaje
+		texto_interaccion.visible = true
+		if nombre_spawn == "":
+			Global.puede_pescar = false
 
 # Cuando el jugador SALE de la zona
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		jugador_dentro = false
-		texto_interaccion.visible = false # Ocultamos el mensaje
+		texto_interaccion.visible = false
+		if nombre_spawn == "":
+			Global.puede_pescar = true

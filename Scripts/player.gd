@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 @onready var tile_marker = $AnimatedSprite2D/Marker2D
 @onready var anim = $AnimatedSprite2D
-# Referencias a los nodos
 @onready var raycast_suelo = $RayCast2D
 @onready var pasos_cesped = $Walk_Grass
 @onready var pasos_arena = $Walk_Sand
@@ -20,35 +19,30 @@ var fish_on_hook := false
 var current_fish = null
 
 func _ready() -> void:
-	# Esto conecta automáticamente el cambio de frame con tu función de abajo
 	if anim:
 		anim.frame_changed.connect(_on_animated_sprite_2d_frame_changed)
-	
+	if Global.puerta_destino != "":
+		await get_tree().process_frame
+		var mundo_nodo = get_tree().current_scene
+		var spawn_point = mundo_nodo.find_child(Global.puerta_destino, true, false)
+		if spawn_point:
+			global_position = spawn_point.global_position
+			print("¡Teletransportado con éxito a: ", Global.puerta_destino, "!")
+		else:
+			print("ERROR: No se encontró ningún nodo llamado: ", Global.puerta_destino)
+		Global.puerta_destino = ""
+
 func reproducir_sonido_paso() -> void:
-	# 1. Si la velocidad es cero, corte de emergencia
 	if velocity == Vector2.ZERO or velocity.length() < 1.0:
 		return
-		
-	# 2. Lista con los nombres exactos de tus capas de mapa
 	var capas_mapa = ["Mapa Tierra", "Arena"]
-	
-	# 3. Revisamos cada capa
 	for nombre_capa in capas_mapa:
 		var mapa_actual = get_parent().find_child(nombre_capa)
-		
 		if mapa_actual and (mapa_actual is TileMapLayer or mapa_actual is TileMap):
-			# Calculamos las coordenadas según la capa
 			var mapa_coords = mapa_actual.local_to_map(tile_marker.global_position)
 			var tile_data = mapa_actual.get_cell_tile_data(mapa_coords)
-			
-			# Si encontramos datos, leemos el terreno
 			if tile_data:
 				var tipo_terreno = tile_data.get_custom_data("Terreno")
-				
-				if tipo_terreno != "":
-					print("Pisando en ", nombre_capa, ": ", tipo_terreno)
-				
-				# Filtramos el sonido
 				match tipo_terreno:
 					"tierra":
 						if not pasos_cesped.playing:
@@ -170,6 +164,8 @@ func player_movement(delta):
 	move_and_slide()
 
 func _start_fishing():
+	if not Global.puede_pescar: 
+		return
 	if not _get_tile_data() == "water": return
 	startFishing = true
 	waitForFish = false
@@ -187,9 +183,13 @@ func _start_fishing():
 
 func _get_tile_data():
 	var tileMap = get_parent().find_child("Mar")
+	if tileMap == null:
+		return ""
 	var searchPosition = tileMap.local_to_map(tile_marker.global_position)
 	var data = tileMap.get_cell_tile_data(searchPosition)
-	if data: return data.get_custom_data("type")
+	if data:
+		return data.get_custom_data("type")	
+	return ""
 
 func play_anim(movement):
 	var dir = current_dir	

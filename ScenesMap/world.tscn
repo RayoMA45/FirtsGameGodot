@@ -846,7 +846,7 @@ tile_set = SubResource("TileSet_16chq")
 [node name="Player" parent="." unique_id=2116602626 instance=ExtResource("1_47y4q")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-24, 63)
+position = Vector2(-87, 43)
 
 [node name="Mar" type="TileMapLayer" parent="." unique_id=210998244]
 z_index = -2
@@ -861,7 +861,7 @@ parameters/looping = true
 
 [node name="Portal" parent="." unique_id=83552109 instance=ExtResource("22_16chq")]
 z_index = 2
-position = Vector2(230, 48)
+position = Vector2(233, 46)
 escena_destino = "uid://cvs2sg0nu178u"
 
 [node name="Gallinas" type="Node2D" parent="." unique_id=1362754775]
@@ -880,7 +880,7 @@ position = Vector2(44, 77)
 position = Vector2(74, 96)
 
 [node name="SpawnCasa1" type="Marker2D" parent="." unique_id=1973208859]
-position = Vector2(303, 53)
+position = Vector2(230, 57)
 
 [node name="SpawnCasa2" type="Marker2D" parent="." unique_id=646811226]
 position = Vector2(-40, 258)
