@@ -23,7 +23,7 @@ func _ready() -> void:
 	# Esto conecta automáticamente el cambio de frame con tu función de abajo
 	if anim:
 		anim.frame_changed.connect(_on_animated_sprite_2d_frame_changed)
-		
+	
 func reproducir_sonido_paso() -> void:
 	# 1. Si la velocidad es cero, corte de emergencia
 	if velocity == Vector2.ZERO or velocity.length() < 1.0:

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://jpcuadwwbo4v" path="res://portal.gd" id="1_1h4re"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e57sj"]
+size = Vector2(18, 8)
 
 [node name="Portal" type="Area2D" unique_id=83552109]
 script = ExtResource("1_1h4re")
@@ -10,5 +11,16 @@ script = ExtResource("1_1h4re")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1178939139]
 shape = SubResource("RectangleShape2D_e57sj")
 
+[node name="Label" type="Label" parent="." unique_id=950175544]
+visible = false
+offset_left = -21.0
+offset_top = -13.0
+offset_right = 20.0
+offset_bottom = -4.0
+theme_override_font_sizes/font_size = 6
+text = "Presiona [E]"
+horizontal_alignment = 1
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="." to="CollisionShape2D" method="_on_portal_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
