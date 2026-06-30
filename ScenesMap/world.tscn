@@ -872,7 +872,7 @@ position = Vector2(89, 115)
 position = Vector2(44, 77)
 
 [node name="Chicken4" parent="Gallinas" unique_id=769407203 instance=ExtResource("21_jpbj0")]
-position = Vector2(74, 96)
+position = Vector2(98, 93)
 
 [node name="SpawnCasa1" type="Marker2D" parent="." unique_id=1973208859]
 position = Vector2(230, 57)

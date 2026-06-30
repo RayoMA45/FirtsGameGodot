@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cc1v556j2tnt4" path="res://Assets/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="2_pp3ra"]
 [ext_resource type="PackedScene" uid="uid://cu2mytsmgpy1l" path="res://ScenesCharacter/Player.tscn" id="3_pp3ra"]
 [ext_resource type="PackedScene" uid="uid://dh8c1o5xm2cbr" path="res://ScenesMap/Portal/portal.tscn" id="4_giyve"]
+[ext_resource type="PackedScene" uid="uid://dpgr25c4fajcm" path="res://ScenesCharacter/Npcs/Mom.tscn" id="5_qeqli"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_giyve"]
 texture = ExtResource("1_m1gnk")
@@ -4032,9 +4033,14 @@ tile_map_data = PackedByteArray("AAALAAMAAAAPADUAAAALAAQAAAAPADYAAAABAP7/AAAMAC0
 tile_set = SubResource("TileSet_pp3ra")
 
 [node name="Player" parent="." unique_id=2116602626 instance=ExtResource("3_pp3ra")]
+z_index = 1
 position = Vector2(25, 83)
 
 [node name="Portal" parent="." unique_id=83552109 instance=ExtResource("4_giyve")]
+z_index = 1
 position = Vector2(24, 92)
 escena_destino = "uid://bn20ed4j2yw5g"
 nombre_spawn = "SpawnCasa1"
+
+[node name="CharacterBody2D" parent="." unique_id=1201740519 instance=ExtResource("5_qeqli")]
+position = Vector2(153, 18)

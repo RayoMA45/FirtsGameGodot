@@ -666,7 +666,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_td14b"]
-radius = 5.0
+radius = 4.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2116602626]
 position = Vector2(0, 7)
@@ -689,6 +689,7 @@ shape = SubResource("CircleShape2D_td14b")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=760973714]
 position = Vector2(0, -15)
+zoom = Vector2(2.1, 2.1)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1975310540]
 position = Vector2(0, -13)

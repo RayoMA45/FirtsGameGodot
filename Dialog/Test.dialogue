@@ -1,0 +1,16 @@
+~ inicio_mom
+
+Mom: ¡Hola, hijo! Qué bueno que regresas a casa.
+Mom: ¿Pudiste atrapar algún pez interesante hoy en el río?
+- Sí, pesqué uno enorme -> si_pesco
+- No, no tuve mucha suerte hoy -> no_pesco
+
+~ si_pesco
+Mom: ¡Excelente! Sabía que tenías talento para la pesca. 
+Mom: Ve a guardarlo antes de que se eche a perder.
+=> END
+
+~ no_pesco
+Mom: No te preocupes, la pesca requiere de mucha paciencia.
+Mom: Seguro que mañana te irá muchísimo mejor.
+=> END

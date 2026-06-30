@@ -64,6 +64,10 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 			reproducir_sonido_paso()
 
 func _physics_process(delta):
+	if get_tree().root.find_child("Balloon", true, false):
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
 	if startFishing: _fishing_state()
 	else: player_movement(delta)
 
