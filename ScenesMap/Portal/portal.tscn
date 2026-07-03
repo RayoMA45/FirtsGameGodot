@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://jpcuadwwbo4v" path="res://portal.gd" id="1_1h4re"]
 [ext_resource type="Texture2D" uid="uid://iqa0srgyhk3" path="res://Assets/UI/Teclas/Keyboard Letters and Symbols.png" id="2_e57sj"]
-[ext_resource type="FontFile" uid="uid://4vgktjtq388n" path="res://Assets/Fonts/5pixwriter.ttf" id="2_ujxyd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e57sj"]
 size = Vector2(18, 8)
@@ -13,21 +12,9 @@ script = ExtResource("1_1h4re")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1178939139]
 shape = SubResource("RectangleShape2D_e57sj")
 
-[node name="Label" type="Label" parent="." unique_id=950175544]
-texture_filter = 1
-offset_left = -24.0
-offset_top = -17.0
-offset_right = 10.0
-offset_bottom = -5.0
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("2_ujxyd")
-theme_override_font_sizes/font_size = 8
-text = "Presiona"
-horizontal_alignment = 1
-
 [node name="IconoTecla" type="Sprite2D" parent="." unique_id=1959848966]
-position = Vector2(14, -12.000001)
-scale = Vector2(0.6640623, 0.6640625)
+position = Vector2(-5.9604645e-08, -11)
+scale = Vector2(0.74869776, 0.748698)
 texture = ExtResource("2_e57sj")
 region_enabled = true
 region_rect = Rect2(64.79527, 33.89891, 13.513046, 12.396271)

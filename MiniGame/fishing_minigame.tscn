@@ -22,39 +22,39 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 91.0
-offset_top = -58.0
-offset_right = 113.0
-offset_bottom = 61.0
+offset_left = 145.0
+offset_top = -155.0
+offset_right = 175.0
+offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Fish" type="Sprite2D" parent="Control/Panel" unique_id=836294571]
 z_index = 3
 position = Vector2(11.9999695, 58.000004)
-scale = Vector2(0.32812482, 0.35937586)
+scale = Vector2(0.5, 0.547)
 offset = Vector2(6.095337, -13.913025)
 
 [node name="Ui" type="Sprite2D" parent="Control/Panel" unique_id=1936923407]
-position = Vector2(-28.999973, 49.000008)
-scale = Vector2(2.2460945, 3.2708328)
+position = Vector2(-37.000015, 80.00001)
+scale = Vector2(2.7680814, 5.186294)
 texture = ExtResource("2_eytke")
 offset = Vector2(18.858917, 2.2550354)
 
 [node name="Bar" type="ColorRect" parent="Control/Panel" unique_id=849464776]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 40.0
-offset_right = 18.0
-offset_bottom = 81.0
+offset_left = 10.0
+offset_top = 37.0
+offset_right = 21.0
+offset_bottom = 88.0
 color = Color(0, 0, 0, 0.4509804)
 
 [node name="ProgressBar" type="ProgressBar" parent="Control/Panel" unique_id=1765978005]
 layout_mode = 0
-offset_left = 27.0
-offset_top = -1.0
-offset_right = 32.0
-offset_bottom = 123.0
+offset_left = 32.0
+offset_top = -2.0
+offset_right = 37.0
+offset_bottom = 195.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 4
 fill_mode = 2

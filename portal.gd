@@ -7,13 +7,13 @@ extends Area2D
 var jugador_dentro : bool = false
 
 # Referencia al texto flotante
-@onready var texto_interaccion = $Label
+#@onready var texto_interaccion = $Label
 @onready var icono_tecla = $IconoTecla
 
 func _ready() -> void:
 	# Nos aseguramos de que el texto empiece oculto
 	icono_tecla.visible = false
-	texto_interaccion.visible = false
+	#texto_interaccion.visible = false
 
 func _process(_delta: float) -> void:
 	# Si el jugador está dentro Y presiona la tecla de interactuar...
@@ -28,7 +28,7 @@ func _process(_delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		jugador_dentro = true
-		texto_interaccion.visible = true
+		#texto_interaccion.visible = true
 		icono_tecla.visible = true
 		if nombre_spawn == "":
 			Global.puede_pescar = false
@@ -37,7 +37,7 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		jugador_dentro = false
-		texto_interaccion.visible = false
+		#texto_interaccion.visible = false
 		icono_tecla.visible = false
 		if nombre_spawn == "":
 			Global.puede_pescar = true
